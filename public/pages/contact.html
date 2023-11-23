@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Manager</title>
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+</head>
+
+<body class="grey lighten-4">
+    <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+            <a href="/">Character<span> Manager</a>
+            <span class="right grey-text text-darken-1">
+                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+            </span>
+        </div>
+    </nav>
+
+    <ul id="side-menu" class="sidenav side-menu">
+        <li><a class="subheader">Character MANAGER</a></li>
+        <li><a href="/" class="waves-effect">Home</a></li>
+        <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="/pages/contact.html" class="waves-effect"><i class="material-icons">mail_outline</i>Contact</a>
+
+        </li>
+    </ul>
+
+    <!-- Content -->
+    <div class="container grey-text">
+        <h5 class="center">Contact</h5>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nulla at suscipit! Eaque consectetur,
+            officia amet itaque distinctio consequatur sunt quia pariatur autem, debitis est impedit enim sint alias in.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perferendis similique, nemo officia quis
+            neque aspernatur repudiandae eveniet aliquam doloribus id laborum ex fugiat! Quae ipsum corrupti facilis
+            possimus fugiat!
+        </p>
+    </div>
+
+        <!-- MODALS -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign Up</h4>
+                <form id="signup-form">
+                    <div class="input-field">
+                        <input type="email" id="signup-email" required>
+                        <label for="signup-email">Email Address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" required>
+                        <label for="signup-password">Choose Password</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Sign In</h4>
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" required>
+                        <label for="login-email">Email Address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required>
+                        <label for="login-password">Enter Password</label>
+                    </div>
+                    <button class="btn green darken-2 z-depth-0">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+                <h4>Account details</h4><br />
+                <div class="account-details"></div>
+            </div>
+        </div>
+
+        <div id="modal-update-text" class="modal">
+            <div class="modal-content center-align">
+                <h4>Edit Entry</h4><br />
+                <form id="update-data-form">
+                    <div class="input-field">
+                        <input type="text" id="update_name">
+                        <label for = "update_name"></label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="update_race">
+                        <label for = "update_race"></label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="update_class">
+                        <label for = "update_class"></label>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" id="update_level">
+                        <label for = "update_level"></label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Update</button>
+                </form>
+            </div>
+        </div>
+
+    <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/db.js"></script>
+    <script type="module" src="/js/db.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+
+</body>
+
+</html>

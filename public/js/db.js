@@ -82,7 +82,10 @@ const taskContainer = document.querySelector(".tasks");
 taskContainer.addEventListener("click", async (event)=> {
   if (event.target.textContent === 'delete_outline'){
   const id = event.target.getAttribute("data-id");
+  const docRef = doc(db, "characters", id);
+  const docSnap = await getDoc(docRef);
   deleteDoc(doc(db, "characters", id));
+  characterDeletedNotification(docSnap.data().class, docSnap.data().level, docSnap.data().name, docSnap.data().race, docSnap.data().user);
 }
 if (event.target.textContent === 'edit'){
   const modal = document.querySelector("#modal-update-text");
@@ -117,6 +120,7 @@ if (event.target.textContent === 'edit'){
           });
         }
       });
+      characterEditedNotification(docSnap.data().class, docSnap.data().level, docSnap.data().name, docSnap.data().race, docSnap.data().user);
     } catch (error) {
       console.error(error);
       M.Modal.getInstance(modal).close();
@@ -143,6 +147,7 @@ onAuthStateChanged(auth, (user) => {
         if (user)
         {
           event.preventDefault();
+          characterCreatedNotification(form.c_class.value, form.c_level.value, form.c_name.value, form.c_race.value, user.uid);
           addDoc(collection(db, "characters"), {
               //title: form.title.value,
               //description: form.description.value
